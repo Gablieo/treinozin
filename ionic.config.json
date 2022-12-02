@@ -1,0 +1,7 @@
+{
+  "name": "afazeres",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

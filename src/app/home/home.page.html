@@ -1,0 +1,50 @@
+<ion-content>
+
+  <h1 class="text-center">
+    Treino
+  </h1>
+
+  <!-- inserir a atividade com o nome e afins -->
+  <!-- inserir nome e kilos-->
+
+  <ion-item>
+    <h5>Informar o nome do exercício e KG e/ou séries.</h5>
+    <h5>Exemplo: <br>Rosca direita 5KG; <br> Flexão: 15 séries de 5;</h5>
+    <ion-label position="floating" class="lb">
+      Nova atividade:
+    </ion-label>
+    <ion-input style="font-family: 'Source Code Pro', monospace;" [(ngModel)]="novaTarefa"></ion-input>
+  </ion-item>
+  <ion-button style="font-family: 'Source Code Pro', monospace;" color="warning" expand="block"
+    (click)="adicionarTarefa()" [disabled]="!novaTarefa">
+    Inserir
+  </ion-button>
+
+  <!-- SE APAGAR EU MATO -->
+
+
+
+
+
+
+  <!-- Não mexer ( função de apagar coisa )-->
+  <!-- apaga a 1 e transforma a seguida em 1 nao apagar -->
+
+  <ion-list>
+    <ion-item-group class="bc" *ngFor="let exercicio of exercicios; let casinha = index">
+      <ion-item-sliding (ionSwipe)="apagarTarefa(casinha)">
+        <ion-item>
+          <ion-label class="lb">{{ casinha+1 }}- {{ exercicio.nome }}</ion-label>
+          <input type="text" [(ngModel)]="exercicio.peso" (change)="gravarInfo()">
+        </ion-item>
+        <ion-item-options side="end"></ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+
+
+
+  <!-- NAO MEXER PORRA -->
+
+
+</ion-content>
